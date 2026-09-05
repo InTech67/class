@@ -1,0 +1,366 @@
+/* --- PENGATURAN DASAR --- */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --bg-color: #F9FAFC;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+.bg-light {
+    background-color: var(--bg-color);
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+/* --- NAVIGASI (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Pengaturan Pembungkus Logo --- */
+.navbar .logo-web {
+    width: 50px;  /* Mengunci lebar logo agar tidak membesarkan ukuran navbar */
+    height: 50px; /* Mengunci tinggi logo */
+    border-radius: 50%; /* Membuat pembungkus menjadi bulat sempurna */
+    overflow: hidden; /* KUNCI: Memotong/membuang semua bagian gambar yang keluar dari lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Mencegah logo mengecil saat dibuka di HP */
+    border: 2px solid var(--primary-color); /* Opsional: memberi bingkai tipis berwarna biru */
+}
+
+/* --- Pengaturan Gambar Logo --- */
+.navbar .logo-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mencegah gambar menjadi gepeng */
+    
+    /* KUNCI CROP: Memperbesar gambar (zoom) sebanyak 1.35x ke arah luar, 
+       sehingga pinggiran kosong di sekitar tulisan logo akan terpotong 
+       oleh 'overflow: hidden' pada pembungkusnya */
+    transform: scale(1.1); 
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://cdn.phototourl.com/free/2026-09-04-1f707fb8-759f-41b1-b45f-fb0f45235c8e.jpg?auto=format&fit=crop&w=1950&q=80');
+    background-repeat: no-repeat;  
+    background-size: cover;         
+    background-position: bottom center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--primary-color);
+    display: none; /* Jika anda sudah kuat mental, hapus ini untuk menampilkan tombol */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: var(--secondary-color);
+}
+
+/* =========================================================
+   DESAIN BARU: WALI KELAS & STRUKTUR ORGANISASI
+   ========================================================= */
+
+/* --- Wali Kelas --- */
+.wali-kelas-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wali-kelas-card {
+    width: 350px;
+    padding: 40px 30px;
+    background: white; /* Memastikan background kartu putih */
+    border-radius: 15px; /* Membuat sudut kartu melengkung */
+    border-top: 6px solid var(--primary-color);
+    text-align: center; /* Menengahkan seluruh teks di dalam kartu */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Memberikan efek bayangan lembut */
+}
+
+.wali-kelas-card img {
+    width: 140px;
+    height: 140px;
+    display: block; /* Wajib diatur menjadi block agar bisa ditengahkan */
+    margin: 0 auto 20px auto; /* Menengahkan foto secara horizontal dan memberi jarak bawah */
+    border-radius: 50%; /* Membuat foto menjadi bulat sempurna */
+    object-fit: cover; /* Mencegah foto menjadi gepeng */
+    border: 4px solid var(--primary-color); /* Memberikan bingkai warna biru di sekeliling foto */
+}
+
+/* Sedikit penyesuaian untuk teks nama dan peran agar lebih rapi */
+.wali-kelas-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.wali-kelas-card .role {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.wali-kelas-card .bio {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Struktur Organisasi: Judul Bagian --- */
+.sub-heading {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+/* --- Struktur Organisasi: Koordinator Seksi --- */
+.seksi-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.seksi-card {
+    background: white;
+    width: 260px;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.seksi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.seksi-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.seksi-card h4 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #eee;
+}
+
+.seksi-nama p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.seksi-nama span {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* --- Struktur Organisasi: PJ Mata Pelajaran --- */
+.pj-grid {
+    display: grid;
+    /* Membuat kolom otomatis yang lebarnya menyesuaikan layar */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pj-item {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s;
+}
+
+.pj-item:hover {
+    transform: translateX(5px);
+    background-color: #f4f9ff;
+}
+
+.pj-item span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.pj-item strong {
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+/* --- GALERI GRID --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+/* --- TAUTAN PENTING --- */
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-link:hover {
+    background-color: var(--primary-color);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- RESPONSIVE DESIGN (UNTUK HP) --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 5px;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

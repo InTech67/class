@@ -1,0 +1,202 @@
+/* --- PENGATURAN DASAR --- */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --bg-color: #F9FAFC;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+.bg-light {
+    background-color: var(--bg-color);
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+/* --- NAVIGASI (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Pengaturan Pembungkus Logo --- */
+.navbar .logo-web {
+    width: 50px;  /* Mengunci lebar logo agar tidak membesarkan ukuran navbar */
+    height: 50px; /* Mengunci tinggi logo */
+    border-radius: 50%; /* Membuat pembungkus menjadi bulat sempurna */
+    overflow: hidden; /* KUNCI: Memotong/membuang semua bagian gambar yang keluar dari lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Mencegah logo mengecil saat dibuka di HP */
+    border: 2px solid var(--primary-color); /* Opsional: memberi bingkai tipis berwarna biru */
+}
+
+/* --- Pengaturan Gambar Logo --- */
+.navbar .logo-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mencegah gambar menjadi gepeng */
+    
+    /* KUNCI CROP: Memperbesar gambar (zoom) sebanyak 1.35x ke arah luar, 
+       sehingga pinggiran kosong di sekitar tulisan logo akan terpotong 
+       oleh 'overflow: hidden' pada pembungkusnya */
+    transform: scale(1.1); 
+}
+
+/* --- Tabel Jadwal Pelajaran --- */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.tabel-jadwal {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.tabel-jadwal th, .tabel-jadwal td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.tabel-jadwal th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tabel-jadwal tr:hover {
+    background-color: #f4f9ff;
+}
+
+.tabel-jadwal td:first-child {
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+/* Desain Seragam untuk Semua Sel Istirahat */
+.tabel-jadwal .sel-istirahat {
+    background-color: #f9f9f9;
+    color: #e67e22;
+    font-weight: bold;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+.sel-istirahat .jumat {
+    background-color: #f4f9ff;
+    color: #e67e22;
+    font-weight: bold;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+/* Desain Kartu Piket */
+.piket-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.piket-card {
+    background: white;
+    width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.piket-card:hover {
+    transform: translateY(-5px);
+}
+
+.piket-hari {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.piket-list {
+    list-style-type: decimal;
+    padding: 20px 20px 20px 40px;
+    margin: 0;
+}
+
+.piket-list li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+    color: #555;
+}
+
+.piket-list li:last-child {
+    border-bottom: none;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}

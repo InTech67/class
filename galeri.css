@@ -1,0 +1,167 @@
+/* --- PENGATURAN DASAR --- */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --bg-color: #F9FAFC;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+.bg-light {
+    background-color: var(--bg-color);
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+/* --- NAVIGASI (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Pengaturan Pembungkus Logo --- */
+.navbar .logo-web {
+    width: 50px;  /* Mengunci lebar logo agar tidak membesarkan ukuran navbar */
+    height: 50px; /* Mengunci tinggi logo */
+    border-radius: 50%; /* Membuat pembungkus menjadi bulat sempurna */
+    overflow: hidden; /* KUNCI: Memotong/membuang semua bagian gambar yang keluar dari lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Mencegah logo mengecil saat dibuka di HP */
+    border: 2px solid var(--primary-color); /* Opsional: memberi bingkai tipis berwarna biru */
+}
+
+/* --- Pengaturan Gambar Logo --- */
+.navbar .logo-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mencegah gambar menjadi gepeng */
+    
+    /* KUNCI CROP: Memperbesar gambar (zoom) sebanyak 1.35x ke arah luar, 
+       sehingga pinggiran kosong di sekitar tulisan logo akan terpotong 
+       oleh 'overflow: hidden' pada pembungkusnya */
+    transform: scale(1.1); 
+}
+
+/* =========================================================
+        HALAMAN GALERI (MASONRY LAYOUT & EFEK OVERLAY)
+   ========================================================= */
+
+.masonry-galeri {
+    column-count: 4; /* Menampilkan 4 kolom foto untuk layar lebar seperti 1920px */
+    column-gap: 20px; /* Jarak antar kolom */
+    width: 100%;
+}
+
+.galeri-item {
+    break-inside: avoid; /* Mencegah foto terpotong di tengah antar kolom */
+    margin-bottom: 20px; /* Jarak foto atas dan bawah */
+    border-radius: 15px;
+    overflow: hidden; /* Menyembunyikan elemen overlay yang keluar dari batas kotak */
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.galeri-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* --- Efek Caption Overlay Muncul Saat Di-Hover --- */
+.galeri-overlay {
+    position: absolute;
+    bottom: -100%; /* Posisi awal disembunyikan di luar batas bawah foto */
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9)); /* Gradasi gelap agar teks terbaca */
+    color: white;
+    transition: bottom 0.4s ease-in-out;
+}
+
+.galeri-overlay h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.galeri-overlay p {
+    font-size: 0.85rem;
+    color: #ddd;
+}
+
+/* Interaksi Hover */
+.galeri-item:hover img {
+    transform: scale(1.08); /* Fotonya sedikit membesar (Zoom In) */
+}
+
+.galeri-item:hover .galeri-overlay {
+    bottom: 0; /* Caption meluncur naik dari bawah */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsif: Menyesuaikan jumlah kolom jika dibuka di layar yang lebih kecil */
+@media screen and (max-width: 1200px) {
+    .masonry-galeri { column-count: 3; }
+}
+@media screen and (max-width: 768px) {
+    .masonry-galeri { column-count: 2; }
+}
+@media screen and (max-width: 480px) {
+    .masonry-galeri { column-count: 1; }
+}

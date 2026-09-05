@@ -1,0 +1,161 @@
+/* --- PENGATURAN DASAR --- */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #2C3E50;
+    --bg-color: #F9FAFC;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+}
+
+.bg-light {
+    background-color: var(--bg-color);
+}
+
+.section {
+    padding: 60px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+/* --- NAVIGASI (HEADER) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Pengaturan Pembungkus Logo --- */
+.navbar .logo-web {
+    width: 50px;  /* Mengunci lebar logo agar tidak membesarkan ukuran navbar */
+    height: 50px; /* Mengunci tinggi logo */
+    border-radius: 50%; /* Membuat pembungkus menjadi bulat sempurna */
+    overflow: hidden; /* KUNCI: Memotong/membuang semua bagian gambar yang keluar dari lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Mencegah logo mengecil saat dibuka di HP */
+    border: 2px solid var(--primary-color); /* Opsional: memberi bingkai tipis berwarna biru */
+}
+
+/* --- Pengaturan Gambar Logo --- */
+.navbar .logo-web img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mencegah gambar menjadi gepeng */
+    
+    /* KUNCI CROP: Memperbesar gambar (zoom) sebanyak 1.35x ke arah luar, 
+       sehingga pinggiran kosong di sekitar tulisan logo akan terpotong 
+       oleh 'overflow: hidden' pada pembungkusnya */
+    transform: scale(1.1); 
+}
+
+/* --- KARTU PROFIL ANGGOTA --- */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+    text-align: center;
+
+    /* PENGATURAN AWAL ANIMASI SCROLL (Tersembunyi & Turun) */
+    opacity: 0; 
+    transform: translateY(60px); 
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--primary-color);
+}
+
+.card .role {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card .bio {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* CLASS FINAL ANIMASI (Akan dipicu oleh JavaScript) */
+.card.muncul {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+/* Responsif untuk HP (Gambar pindah ke atas teks jika layar sempit) */
+@media screen and (max-width: 600px) {
+    .kartu-lebar {
+        flex-direction: column;
+        text-align: center;
+    }
+}

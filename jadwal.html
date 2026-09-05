@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelas XI-E2</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="jadwal.css">
+    <!-- Mengambil Font dari Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Mengambil Icon dari FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+     <!-- NAVIGASI -->
+    <nav class="navbar">
+        <!-- Logo diubah menjadi gambar dan bisa diklik untuk kembali ke beranda -->
+        <a href="beranda.html" class="logo-web">
+            <img src="https://ugc.production.linktr.ee/5dd5a2be-cfb0-43f6-9d3d-f687014af89f_linktree-cropped-f5fa58ee-37eb-4b3c-a644-c58902e99adb.jpeg" alt="Logo Kelas">
+        </a>
+        
+        <ul class="nav-links">
+            <li><a href="beranda.html">Beranda</a></li>
+            <li><a href="anggota.html">Anggota</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="jadwal.html">Jadwal</a></li>
+        </ul>
+    </nav>
+
+    <!-- BAGIAN JADWAL PELAJARAN -->
+  <table class="tabel-jadwal">
+    <thead>
+        <tr>
+            <th>Jam</th>
+            <th>Senin</th>
+            <th>Selasa</th>
+            <th>Rabu</th>
+            <th>Kamis</th>
+            <th>Jumat</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Jam 1 -->
+        <tr>
+            <td>1</td>
+            <td>Upacara</td><td>Informatika</td><td>Matematika</td><td>PAI</td><td>Sejarah</td>
+        </tr>
+        <!-- Jam 2 -->
+        <tr>
+            <td>2</td>
+            <td>PJOK</td><td>Informatika</td><td>Matematika</td><td>Geografi</td><td>Sejarah</td>
+        </tr>
+        <!-- Jam 3 -->
+        <tr>
+            <td>3</td>
+            <td>PJOK</td><td>Biologi</td><td>PKWU</td><td>Sejarah</td><td>Biologi</td>
+        </tr>
+        <!-- Jam 4 -->
+        <tr>
+            <td>4</td>
+            <td>PJOK</td><td>B. Jepang</td><td>PKWU</td><td>Sejarah</td><td>Biologi</td>
+        </tr>
+        <!-- Jam 5 & Istirahat Pertama -->
+        <tr>
+            <td>5</td>
+            <td>B. Jepang</td><td>B. Jepang</td><td>Seni Budaya</td><td>B. Jepang</td>
+            <td rowspan="1" class="sel-istirahat">ISTIRAHAT</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="sel-istirahat">ISTIRAHAT PERTAMA</td>
+            <td rowspan="1" class="jumat">-</td>
+        </tr>
+
+        <!-- Jam 6 -->
+        <tr>
+            <td>6</td>
+            <td>Matematika</td><td>B. Indonesia</td><td>PAI</td><td>PKN</td><td>B. Inggris</td>
+        </tr>
+        <!-- Jam 7 -->
+        <tr>
+            <td>7</td>
+            <td>Matematika</td><td>B. Indonesia</td><td>PAI</td><td>PKN</td><td>B. Inggris</td>
+        </tr>
+
+        <!-- Istirahat Kedua (Menggunakan colspan="5" agar sejajar dengan Istirahat Pertama) -->
+        <tr>
+            <td colspan="5" class="sel-istirahat">ISTIRAHAT KEDUA</td>
+            <td rowspan="1" class="jumat">-</td>
+        </tr>
+
+        <!-- Jam 8 -->
+        <tr>
+            <td>8</td>
+            <td>Biologi</td><td>B. Inggris</td><td>B. Indonesia</td><td>BK</td><td>-</td>
+        </tr>
+        <!-- Jam 9 -->
+        <tr>
+            <td>9</td>
+            <td>Informatika</td><td>Geografi</td><td>B. Indonesia</td><td>B. Sunda</td><td>-</td>
+        </tr>
+        <!-- Jam 10 -->
+        <tr>
+            <td>10</td>
+            <td>Informatika</td><td>Geografi</td><td>Geografi</td><td>Informatika</td><td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+    <!-- BAGIAN JADWAL PIKET -->
+    <section class="section bg-light">
+        <h2>Jadwal Piket Kelas</h2>
+        <div class="piket-container">
+            
+            <!-- Kartu Piket Senin -->
+            <div class="piket-card">
+                <div class="piket-hari">Senin</div>
+                <ol class="piket-list">
+                    <li>Syaloum</li><li>Oca</li><li>Saif</li><li>Frizcha</li><li>Salsabil</li>
+                    <li>Azis</li><li>Shelma</li><li>Lulu</li><li>Desi</li><li>Haikal</li>
+                </ol>
+            </div>
+
+            <!-- Kartu Piket Selasa -->
+            <div class="piket-card">
+                <div class="piket-hari">Selasa</div>
+                <ol class="piket-list">
+                    <li>Keysha</li><li>Niquita</li><li>Putra</li><li>Aprilio</li><li>Ana</li>
+                    <li>Arbiba</li><li>Azra</li><li>Zaidan</li><li>Farlan</li>
+                </ol>
+            </div>
+
+            <!-- Kartu Piket Rabu -->
+            <div class="piket-card">
+                <div class="piket-hari">Rabu</div>
+                <ol class="piket-list">
+                    <li>Rizky C.</li><li>Naufal</li><li>Aurel</li><li>Fadhil</li><li>Faruzzaman</li>
+                    <li>Alwi</li><li>Raffa</li><li>Farid</li><li>Meylisa</li><li>Ghaisan</li>
+                </ol>
+            </div>
+
+            <!-- Kartu Piket Kamis -->
+            <div class="piket-card">
+                <div class="piket-hari">Kamis</div>
+                <ol class="piket-list">
+                    <li>Fairuz</li><li>Raden</li><li>Hafizh</li><li>Rizky P.</li><li>Aniq</li>
+                    <li>Khansa</li><li>Bagus</li><li>Vickry</li><li>Fadhlur</li>
+                </ol>
+            </div>
+
+            <!-- Kartu Piket Jumat -->
+            <div class="piket-card">
+                <div class="piket-hari">Jumat</div>
+                <ol class="piket-list">
+                    <li>Dania</li><li>Affan</li><li>Afrah</li><li>Irfan</li><li>Qinara</li>
+                    <li>Viona</li><li>Essel</li><li>Dio</li><li>Dwi Andika</li><li>Syarif</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+
+     <!-- FOOTER -->
+    <footer>
+        <p>Made with <i class="fa-solid fa-heart" style="color: red;"></i> by Irfan &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
